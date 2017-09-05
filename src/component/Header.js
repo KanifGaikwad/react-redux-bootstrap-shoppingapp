@@ -28,7 +28,7 @@ const Header = ({setactivebutton, activeTab}) => {
                     <button onClick={() => setactivebutton('SALE')} type="button"  className="btn btn-default"><span className="glyphicon glyphicon-share glyphicon-align-left" aria-hidden="true"></span>Todays sale</button>
                 </div>
                 <div className="btn-group" role="group">
-                    <button type="button" className="btn btn-default"><span className="glyphicon glyphicon-thumbs-up glyphicon-align-left" aria-hidden="true"></span>Manage</button>
+                    <button type="button" className="btn btn-default"><span className="glyphicon glyphicon-shopping-cart glyphicon-align-left" aria-hidden="true"></span>Cart</button>
                 </div>
             </div>
 

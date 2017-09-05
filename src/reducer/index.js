@@ -1,12 +1,14 @@
 import activeButtonId from '../reducer/button-reducer'
-import loadProducts from '../reducer/home-tab-reducers'
+import soldlist from './sale-reducers'
 import staticData from '../reducer/static-data'
+import checkedproductindex from '../reducer/product-reducer'
 
 import { combineReducers } from 'redux'
 
 export const rootReducer = combineReducers({
      activeButtonId,
-     loadProducts,
+    soldlist,
+    checkedproductindex,
     staticData
 })
 

@@ -9,33 +9,19 @@ import App from './component/App'
 require('./css/bootstrap.css')
 
 const defaultState = {
-    staticData: [
-        {
-            products: [
-                {
-                    id: 1, name: 'X1', desc: 'Only for Women', price: 20
-                },
-                {
-                    id: 2, name: 'X1', desc: 'Only for Women', price: 30
-                },
-                {
-                    id: 3, name: 'X3', desc: 'Only for Women', price: 40
-                }
-            ]
-        },{
-            daysale: [
-                {
-                    id: 1, name: 'P1', desc: 'Only for Women', price: 20
-                },
-                {
-                    id: 2, name: 'P2', desc: 'Only for Women', price: 30
-                },
-                {
-                    id: 3, name: 'P3', desc: 'Only for Women', price: 40
-                }
-            ]
-        }
-    ]
+    staticData: [ {
+        products: [
+            {
+                id: 1, name: 'X1', desc: 'Only for Women', price: 20, incart: false
+            },
+            {
+                id: 2, name: 'X1', desc: 'Only for Women', price: 30, incart: false
+            },
+            {
+                id: 3, name: 'X3', desc: 'Only for Women', price: 40, incart: false
+            }
+        ]
+    }]
 }
 
 

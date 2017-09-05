@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ProductsList = ({products}) => {
+const ProductsList = ({products, addtosoldlist}) => {
     return (
         <div>
 
@@ -11,7 +11,7 @@ const ProductsList = ({products}) => {
             <table className="table">
                 <thead className="thead-default">
                 <tr>
-                    <th><input type="checkbox" className="form-check-input" /></th>
+                    <th><input type="checkbox" className="form-check-input" onClick={()=>addtosoldlist()}/></th>
                     <th>Product Name</th>
                     <th>Product Description</th>
                     <th>Product Price</th>
@@ -21,7 +21,7 @@ const ProductsList = ({products}) => {
                     {products.map(p =>
                         <tr key={p.id}>
                             <td>
-                                <input type="checkbox" className="form-check-input" />
+                                <input checked={p.incart} type="checkbox" className="form-check-input" onClick={()=>addtosoldlist(p.id, p.name, p.price)} />
                             </td>
                             <td>
                                 {p.name}
