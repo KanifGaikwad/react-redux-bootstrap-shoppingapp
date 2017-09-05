@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ProductsList = ({products}) => {
+const SaleList = ({products}) => {
     return (
         <div>
             {products.map(p =>
@@ -10,4 +10,4 @@ const ProductsList = ({products}) => {
     )
 }
 
-export default ProductsList
+export default SaleList

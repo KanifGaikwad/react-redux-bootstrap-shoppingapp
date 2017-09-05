@@ -1,8 +1,8 @@
 
-const activeButtonId = (state='', action) => {
+const activeButtonId = (state='PRODUCT', action) => {
     switch(action.type){
         case 'SET_ACTIVE_BUTTON' :
-              return action.id
+              return action.tabid
          default :
                 return state
     }

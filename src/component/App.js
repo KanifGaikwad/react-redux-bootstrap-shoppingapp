@@ -1,13 +1,12 @@
 import React from 'react'
-import Products from '../container/product-container'
-const App = (props) => {
+import TabHeader from '../container/header-container'
 
+const App = () => {
     return(
         <div>
-           <Products />
+           <TabHeader />
         </div>
     )
-
 }
 
 export default App;
