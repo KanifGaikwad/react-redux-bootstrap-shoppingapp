@@ -2,25 +2,45 @@ import React from 'react'
 import { render } from 'react-dom'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
-import {tabs} from './reducer/home-tab-reducers'
+import rootReducer from './reducer/index'
 import App from './component/App'
 
 
 require('./css/bootstrap.css')
 
-
 const defaultState = {
+    staticData: [
+        {
+            products: [
+                {
+                    id: 1, name: 'X1', desc: 'Only for Women'
+                },
+                {
+                    id: 2, name: 'X1', desc: 'Only for Women'
+                },
+                {
+                    id: 3, name: 'X3', desc: 'Only for Women'
+                }
+            ]
+        },{
+            daysale: [
+                {
+                    id: 1, name: 'P1', desc: 'Only for Women'
+                },
+                {
+                    id: 2, name: 'P2', desc: 'Only for Women'
+                },
+                {
+                    id: 3, name: 'P3', desc: 'Only for Women'
+                }
+            ]
+        }
+    ]
+}
 
-productCat : ['COSMETIC','PERFUME','OTHER'],
-cosmeticProducts : [{
-    id: 1, name: 'X1', desc: 'Only for Women'},
-    {
-    id: 1, name: 'X1', desc: 'Only for Women'}
-   ]
-} ;
 
 
-const store = createStore(tabs, defaultState)
+const store = createStore(rootReducer, defaultState)
 
 render(
     <Provider store ={store}>
