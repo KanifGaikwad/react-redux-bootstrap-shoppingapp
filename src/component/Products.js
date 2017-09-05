@@ -3,9 +3,40 @@ import React from 'react'
 const ProductsList = ({products}) => {
     return (
         <div>
-            {products.map(p =>
-                <div key={p.id}>{p.name}</div>
-            )}
+
+            <ol className="breadcrumb">
+                <li className="breadcrumb-item active"> Add Products to Cart</li>
+            </ol>
+
+            <table className="table">
+                <thead className="thead-default">
+                <tr>
+                    <th><input type="checkbox" className="form-check-input" /></th>
+                    <th>Product Name</th>
+                    <th>Product Description</th>
+                    <th>Product Price</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {products.map(p =>
+                        <tr key={p.id}>
+                            <td>
+                                <input type="checkbox" className="form-check-input" />
+                            </td>
+                            <td>
+                                {p.name}
+                            </td>
+                            <td>
+                                {p.desc}
+                            </td>
+                            <td>
+                                {p.price} INR
+                            </td>
+                        </tr>
+                    )}
+
+                </tbody>
+            </table>
         </div>
     )
 }

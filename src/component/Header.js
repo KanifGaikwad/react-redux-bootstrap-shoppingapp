@@ -10,6 +10,8 @@ const Header = ({setactivebutton, activeTab}) => {
             return <Products />;
         }else if(activeTab === 'SALE'){
             return <Sale />;
+        }else{
+            return <div />;
         }
     }
 
