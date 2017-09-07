@@ -1,15 +1,14 @@
 import React from 'react'
-import { render } from 'react-dom'
-import { createStore } from 'redux'
-import { Provider } from 'react-redux'
+import {render} from 'react-dom'
+import {createStore} from 'redux'
+import {Provider} from 'react-redux'
 import rootReducer from './reducer/index'
 import App from './component/App'
-
 
 require('./css/bootstrap.css')
 
 const defaultState = {
-    staticData: [ {
+    staticData: [{
         products: [
             {
                 id: 1, name: 'X1', desc: 'Only for Women', price: 20, incart: false
@@ -24,13 +23,11 @@ const defaultState = {
     }]
 }
 
-
-
 const store = createStore(rootReducer, defaultState)
 
 render(
-    <Provider store ={store}>
-        <App />
+    <Provider store={store}>
+        <App/>
     </Provider>,
-  document.getElementById('root')
+    document.getElementById('root')
 )

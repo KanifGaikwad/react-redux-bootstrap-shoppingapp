@@ -1,15 +1,17 @@
-import React from 'react'
+import React from 'react';
 
-const SaleList = ({products}) => {
+const Cart = ({products, removeitemfromcartlist, total}) => {
+
     return (
         <div>
             <ol className="breadcrumb">
-                <li className="breadcrumb-item active"> Today's Sold item</li>
+                <li className="breadcrumb-item active">Cart item(s)</li>
             </ol>
 
             <table className="table">
                 <thead className="thead-default">
                 <tr>
+                    <th></th>
                     <th>Product Name</th>
                     <th>Product Price</th>
                 </tr>
@@ -18,6 +20,9 @@ const SaleList = ({products}) => {
                 {products.map(p =>
                     <tr key={p.id}>
                         <td>
+                            <input defaultChecked type="checkbox" className="form-check-input" onClick={()=>removeitemfromcartlist(p.id, p.price)} />
+                        </td>
+                        <td>
                             {p.name}
                         </td>
                         <td>
@@ -25,16 +30,15 @@ const SaleList = ({products}) => {
                         </td>
                     </tr>
                 )}
-
                 </tbody>
             </table>
 
             <div className="input-group">
                 <span className="input-group-addon" id="basic-addon3">Total</span>
-                <input type="text" className="form-control" id="basic-url" aria-describedby="basic-addon3" />
+                <input type="text" readOnly={true} value={total} className="form-control" id="basic-url" aria-describedby="basic-addon3"/>
             </div>
         </div>
     )
 }
 
-export default SaleList
+export default Cart;

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import Header from '../component/Header'
-import {setactivebutton} from "../action/product-actions";
+import {setactivebutton} from "../action/app-actions";
 
 const mapStateToProps = (state) => ({
     activeTab : state.activeButtonId

@@ -1,5 +1,5 @@
-const soldlist = (state =[], action) => {
-    switch(action.type){
+const soldlist = (state = [], action) => {
+    switch (action.type) {
         case 'ADD_TO_SOLD_LIST':
             return [...state,
                 {

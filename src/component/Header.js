@@ -1,6 +1,7 @@
 import React from 'react'
 import Products from '../container/product-container'
-import Sale from '../container/sale-container'
+import Sale from '../container/cart-container'
+import Cart from '../container/cart-container'
 
 
 const Header = ({setactivebutton, activeTab}) => {
@@ -10,6 +11,8 @@ const Header = ({setactivebutton, activeTab}) => {
             return <Products />;
         }else if(activeTab === 'SALE'){
             return <Sale />;
+        }else if(activeTab === 'CART'){
+            return <Cart />;
         }else{
             return <div />;
         }
@@ -28,7 +31,7 @@ const Header = ({setactivebutton, activeTab}) => {
                     <button onClick={() => setactivebutton('SALE')} type="button"  className="btn btn-default"><span className="glyphicon glyphicon-share glyphicon-align-left" aria-hidden="true"></span>Todays sale</button>
                 </div>
                 <div className="btn-group" role="group">
-                    <button type="button" className="btn btn-default"><span className="glyphicon glyphicon-shopping-cart glyphicon-align-left" aria-hidden="true"></span>Cart</button>
+                    <button onClick={() => setactivebutton('CART')} type="button" className="btn btn-default"><span className="glyphicon glyphicon-shopping-cart glyphicon-align-left" aria-hidden="true"></span>Cart</button>
                 </div>
             </div>
 

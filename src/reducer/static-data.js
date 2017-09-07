@@ -17,3 +17,4 @@ const persistState = (state, index) => {
 }
 
 export default staticData
+

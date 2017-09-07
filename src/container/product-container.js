@@ -1,15 +1,19 @@
 import { connect } from 'react-redux'
 import ProductList from '../component/Products'
-import {addtosoldlist, checkfilterproduct} from "../action/product-actions";
+import { addtocartlist, checkfilterproduct, removefromcartlist} from "../action/app-actions";
 
 const mapStateToProps = (state) => ({
     products :  state.staticData[0].products
 })
 
 const mapDispatchToProps = (dispatch) => ({
-    addtosoldlist : (id, name, price) => {
-        dispatch(addtosoldlist(id, name, price))
+    addtocart : (id, name, price, unchecked) => {
         dispatch(checkfilterproduct(id))
+        if(unchecked){
+            dispatch(removefromcartlist(id, price))
+        }else{
+            dispatch(addtocartlist(id, name, price))
+        }
     }
 })
 
