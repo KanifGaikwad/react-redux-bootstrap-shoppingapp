@@ -16,6 +16,11 @@ const cartlist = (state = {list: [], total: 0}, action) => {
             list: state.list.filter(element => element.id !== action.id),
             total: state.total - action.price
         };
+    } else if(action.type === 'FLUSH_CART') {
+        return {
+            list: [],
+            total: 0
+        }
     }
     return state;
 }

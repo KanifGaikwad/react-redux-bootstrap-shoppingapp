@@ -1,6 +1,6 @@
 import React from 'react'
 import Products from '../container/product-container'
-import Sale from '../container/cart-container'
+import Sale from '../container/sale-container'
 import Cart from '../container/cart-container'
 
 
@@ -21,7 +21,7 @@ const Header = ({setactivebutton, activeTab}) => {
     return(
         <div>
             <nav className="navbar navbar-default">
-                <a className="navbar-brand">React App</a>
+                <a className="navbar-brand">React-Redux-BootStrap App</a>
             </nav>
             <div className="btn-group btn-group-justified" role="group" >
                 <div className="btn-group" role="group">

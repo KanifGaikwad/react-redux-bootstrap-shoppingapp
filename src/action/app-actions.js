@@ -20,3 +20,19 @@ export const removefromcartlist = (id, price) => ({
     id,
     price
 })
+
+export const addtosoldlist = (cartlist, carttotal) => ({
+    type: 'ADD_TO_SOLD_LIST',
+    cartlist,
+    carttotal
+})
+
+export const flushproducts = () => ({
+    type: 'FLUSH_PRODUCTS'
+})
+
+export const flushcart = () => ({
+    type: 'FLUSH_CART'
+})
+
+

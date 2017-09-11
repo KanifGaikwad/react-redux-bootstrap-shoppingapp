@@ -1,7 +1,9 @@
 import React from 'react'
 
-const SaleList = ({products}) => {
-    return (
+const SaleList = ({solditem,
+                      soldtotal}) => {
+
+      return (
         <div>
             <ol className="breadcrumb">
                 <li className="breadcrumb-item active"> Today's Sold item</li>
@@ -12,16 +14,20 @@ const SaleList = ({products}) => {
                 <tr>
                     <th>Product Name</th>
                     <th>Product Price</th>
+                    <th>Sold Time</th>
                 </tr>
                 </thead>
                 <tbody>
-                {products.map(p =>
-                    <tr key={p.id}>
+                {solditem.map((p, index) =>
+                    <tr key={index}>
                         <td>
                             {p.name}
                         </td>
                         <td>
                             {p.price} INR
+                        </td>
+                        <td>
+                            {p.timestamp} IST
                         </td>
                     </tr>
                 )}
@@ -30,8 +36,8 @@ const SaleList = ({products}) => {
             </table>
 
             <div className="input-group">
-                <span className="input-group-addon" id="basic-addon3">Total</span>
-                <input type="text" className="form-control" id="basic-url" aria-describedby="basic-addon3" />
+                <span className="input-group-addon" id="basic-addon3">Today's Total</span>
+                <input type="text" value={soldtotal} readOnly={true} className="form-control" id="basic-url" aria-describedby="basic-addon3" />
             </div>
         </div>
     )

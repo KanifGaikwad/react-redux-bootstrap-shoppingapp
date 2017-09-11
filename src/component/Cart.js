@@ -1,6 +1,10 @@
 import React from 'react';
 
-const Cart = ({products, removeitemfromcartlist, total}) => {
+const Cart = ({products,
+                  removeitemfromcartlist,
+                  total,
+                  submitButtonStatus,
+                  submitcartitem}) => {
 
     return (
         <div>
@@ -35,8 +39,11 @@ const Cart = ({products, removeitemfromcartlist, total}) => {
 
             <div className="input-group">
                 <span className="input-group-addon" id="basic-addon3">Total</span>
-                <input type="text" readOnly={true} value={total} className="form-control" id="basic-url" aria-describedby="basic-addon3"/>
+                <span className="input-group-addon" id="basic-addon3"><input type="text" readOnly={true} value={total} className="form-control" id="basic-url" aria-describedby="basic-addon3"/></span>
+                <span className="input-group-addon" id="basic-addon3"><button onClick={()=>submitcartitem(products, total)} type="button" className="btn btn-primary" disabled={submitButtonStatus}>Submit Order</button></span>
             </div>
+
+
         </div>
     )
 }

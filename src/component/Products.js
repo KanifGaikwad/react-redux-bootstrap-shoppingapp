@@ -11,7 +11,7 @@ const ProductsList = ({products, addtocart}) => {
             <table className="table">
                 <thead className="thead-default">
                 <tr>
-                    <th><input type="checkbox" className="form-check-input" onClick={()=>addtocart()}/></th>
+                    <th></th>
                     <th>Product Name</th>
                     <th>Product Description</th>
                     <th>Product Price</th>
