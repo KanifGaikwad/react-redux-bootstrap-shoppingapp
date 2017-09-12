@@ -6,9 +6,11 @@ import rootReducer from './reducer/index'
 import App from './component/App'
 
 require('./css/bootstrap.css')
+require('./css/sticky-footer-navbar.css')
+
 
 const defaultState = {
-    staticData: [{
+    staticData: {
         products: [
             {
                 id: 1, name: 'X1', desc: 'Only for Women', price: 20, incart: false
@@ -20,7 +22,7 @@ const defaultState = {
                 id: 3, name: 'X3', desc: 'Only for Women', price: 40, incart: false
             }
         ]
-    }]
+    }
 }
 
 const store = createStore(rootReducer, defaultState)

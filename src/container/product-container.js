@@ -3,7 +3,7 @@ import ProductList from '../component/Products'
 import { addtocartlist, checkfilterproduct, removefromcartlist} from "../action/app-actions";
 
 const mapStateToProps = (state) => ({
-    products :  state.staticData[0].products
+    products :  state.staticData.products
 })
 
 const mapDispatchToProps = (dispatch) => ({
