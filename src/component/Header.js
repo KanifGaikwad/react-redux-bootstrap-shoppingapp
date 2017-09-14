@@ -21,7 +21,7 @@ const Header = ({setactivebutton, activeTab}) => {
     return(
         <div id="wrap">
             <nav className="navbar navbar-default">
-                <a className="navbar-brand">React-Redux-BootStrap App</a>
+                <a className="navbar-brand">The Shop</a>
             </nav>
             <div className="btn-group btn-group-justified" role="group" >
                 <div className="btn-group" role="group">
@@ -36,17 +36,15 @@ const Header = ({setactivebutton, activeTab}) => {
             </div>
 
             <ActiveTab />
-
             <footer className="footer">
                 <div className="container">
-                    <span className="text-muted">Contact us - kanif888@live.com</span>
-                    <span className="text-muted">   Phone - +91 9730106333 </span>
+                    <span className="badge badge-info">kanif888@live.com</span>
+                    <span className="badge badge-info">+91 9730106333</span>
                 </div>
             </footer>
 
         </div>
     )
-
 }
 
 export default Header;

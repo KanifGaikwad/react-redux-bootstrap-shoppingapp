@@ -1,43 +1,52 @@
 import React from 'react'
 
 const ProductsList = ({products, addtocart}) => {
+
+  const product = (p) => {
+      if(p === undefined){
+          return(<div></div>);
+      }
+      return (
+          <div className="list-group" key={p.id}>
+              <a href="#" className="list-group-item list-group-item-action flex-column align-items-start active">
+                  <div className="d-flex w-100 justify-content-between">
+                      <h5 className="mb-1">
+                          <input className="form-check-input" type="checkbox" checked={p.incart}
+                                 onClick={() => addtocart(p.id, p.name, p.price)}>
+                          </input>{p.name}
+                      </h5>
+                  </div>
+                  <p className="mb-1">{p.desc}</p>
+                  <small>{p.price} INR
+                  </small>
+              </a>
+          </div>
+      )
+  }
+
+    const prodrows = (products) => {
+        var list = [];
+        for (let i = 0; i < products.length; i=i+3) {
+            {
+                list.push(
+                    <div className="row">
+                        <div className="col-md-4">{product(products[i])}</div>
+                        <div className="col-md-4">{product(products[i + 1])}</div>
+                        <div className="col-md-4">{product(products[i + 2])}</div>
+                    </div>
+                )
+            }
+        }
+        return list;
+    }
+
     return (
         <div>
-
             <ol className="breadcrumb">
                 <li className="breadcrumb-item active"> Add Products to Cart</li>
             </ol>
-
-            <table className="table">
-                <thead className="thead-default">
-                <tr>
-                    <th></th>
-                    <th>Product Name</th>
-                    <th>Product Description</th>
-                    <th>Product Price</th>
-                </tr>
-                </thead>
-                <tbody>
-                    {products.map(p =>
-                        <tr key={p.id}>
-                            <td>
-                                <input checked={p.incart} type="checkbox" className="form-check-input" onClick={()=>addtocart(p.id, p.name, p.price, p.incart)} />
-                            </td>
-                            <td>
-                                {p.name}
-                            </td>
-                            <td>
-                                {p.desc}
-                            </td>
-                            <td>
-                                {p.price} INR
-                            </td>
-                        </tr>
-                    )}
-
-                </tbody>
-            </table>
-        </div>
+            {prodrows(products)}
+       </div>
     )
 }
 
