@@ -3,7 +3,9 @@ import Header from '../component/Header'
 import {setactivebutton} from "../action/app-actions";
 
 const mapStateToProps = (state) => ({
-    activeTab : state.activeButtonId
+    activeTab : state.activeButtonId,
+    cartItem : state.cartlist.list.length,
+    soldItem : state.soldlist.list.length
 })
 
 const mapDispatchToProps = (dispatch) => ({
