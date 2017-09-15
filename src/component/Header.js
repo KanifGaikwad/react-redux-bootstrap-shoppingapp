@@ -46,8 +46,8 @@ const Header = ({setactivebutton, activeTab, cartItem, soldItem}) => {
             <ActiveTab/>
             <footer className="footer">
                 <div className="container">
-                    <span className="badge badge-info">Kanifnath Gaikwad </span>
-                     <a href='https://www.linkedin.com/in/kanifnath-gaikwad-18867845/'>LinkedIn Me</a>
+                    <span className="badge badge-info">Kanifnath Gaikwad   </span>
+                    <a href='https://www.linkedin.com/in/kanifnath-gaikwad-18867845/'>LinkedIn Me </a>- Happy to help!
                 </div>
             </footer>
 

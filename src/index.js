@@ -16,8 +16,8 @@ const generateProducts = (number) => {
     for(let i=0; i< number; i++){
         returnObject.push({
             id: i,
-            name: 'PRODUCT No '+i,
-            desc: 'This product can be used by'+ i,
+            name: 'PRODUCT Number '+i,
+            desc: 'This product can be used by '+ i,
             price: i+10,
             incart: false })
     }
@@ -27,7 +27,7 @@ const generateProducts = (number) => {
 
 const defaultState = {
     staticData: {
-        products: generateProducts(1000)
+        products: generateProducts(500)
     }
 }
 
