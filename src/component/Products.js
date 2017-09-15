@@ -12,7 +12,7 @@ const ProductsList = ({products, addtocart}) => {
                   <div className="d-flex w-100 justify-content-between">
                       <h5 className="mb-1">
                           <input className="form-check-input" type="checkbox" checked={p.incart}
-                                 onClick={() => addtocart(p.id, p.name, p.price)}>
+                                 onClick={() => addtocart(p.id, p.name, p.price, p.incart)}>
                           </input>{p.name}
                       </h5>
                   </div>
@@ -45,6 +45,18 @@ const ProductsList = ({products, addtocart}) => {
             <ol className="breadcrumb">
                 <li className="breadcrumb-item active"> Add Products to Cart</li>
             </ol>
+
+            <div className='row custom-searchdiv-margin'>
+                <div className="col-lg-6">
+                    <div className="input-group">
+                      <span className="input-group-btn">
+                        <button className="btn btn-default" type="button">Go!</button>
+                      </span>
+                        <input type="text" className="form-control" placeholder="Search for..."></input>
+                    </div>
+                </div>
+            </div>
+
             {prodrows(products)}
        </div>
     )

@@ -8,34 +8,26 @@ import thunk from 'redux-thunk'
 
 require('./css/bootstrap.css')
 require('./css/sticky-footer-navbar.css')
+require('./css/theshop.css')
 
+
+const generateProducts = (number) => {
+    let returnObject= [];
+    for(let i=0; i< number; i++){
+        returnObject.push({
+            id: i,
+            name: 'PRODUCT No '+i,
+            desc: 'This product can be used by'+ i,
+            price: i+10,
+            incart: false })
+    }
+    return returnObject;
+}
 
 
 const defaultState = {
     staticData: {
-        products: [
-            {
-                id: 1, name: 'X1', desc: 'Only for Women', price: 20, incart: false
-            },
-            {
-                id: 2, name: 'X2', desc: 'Only for Women', price: 30, incart: false
-            },
-            {
-                id: 3, name: 'X3', desc: 'Only for Women', price: 40, incart: false
-            },
-            {
-                id: 4, name: 'X4', desc: 'Only for Women', price: 20, incart: false
-            },
-            {
-                id: 5, name: 'X5', desc: 'Only for Women', price: 30, incart: false
-            },
-            {
-                id: 6, name: 'X6', desc: 'Only for Women', price: 40, incart: false
-            },
-            {
-                id: 6, name: 'X7', desc: 'Only for Women', price: 40, incart: false
-            }
-        ]
+        products: generateProducts(1000)
     }
 }
 
