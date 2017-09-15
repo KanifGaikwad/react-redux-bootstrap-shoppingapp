@@ -35,4 +35,12 @@ export const flushcart = () => ({
     type: 'FLUSH_CART'
 })
 
+export const filterproductbykey = (filterstring) =>({
+    type: 'FILTER_PRODUCTS',
+    filterstring
+})
+
+export const clearfilter = (filterstring) =>({
+    type: 'CLEAR_FILTER'
+})
 

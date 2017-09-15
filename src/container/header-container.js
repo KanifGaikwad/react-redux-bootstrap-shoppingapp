@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import Header from '../component/Header'
-import {setactivebutton} from "../action/app-actions";
+import {clearfilter, setactivebutton} from "../action/app-actions";
 
 const mapStateToProps = (state) => ({
     activeTab : state.activeButtonId,
@@ -11,6 +11,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
     setactivebutton : (tabid) =>{
         dispatch(setactivebutton(tabid))
+        dispatch(clearfilter())
     }
 })
 

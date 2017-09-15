@@ -1,9 +1,16 @@
 import { connect } from 'react-redux'
 import ProductList from '../component/Products'
-import { addtocartlist, checkfilterproduct, removefromcartlist} from "../action/app-actions";
+import { addtocartlist, checkfilterproduct, removefromcartlist, filterproductbykey} from "../action/app-actions";
+
+const filterBySearch = (filterString, list) => {
+    if(filterString === ''){
+        return list;
+    }
+    return list.filter( product => product.name.indexOf(filterString) !== -1)
+}
 
 const mapStateToProps = (state) => ({
-    products :  state.staticData.products
+    products : filterBySearch( state.filterstring, state.staticData.products)
 })
 
 const mapDispatchToProps = (dispatch) => ({
@@ -14,6 +21,9 @@ const mapDispatchToProps = (dispatch) => ({
         }else{
             dispatch(addtocartlist(id, name, price))
         }
+    },
+    filterproducts: (filterString) => {
+        dispatch(filterproductbykey(filterString))
     }
 })
 

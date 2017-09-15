@@ -5,7 +5,6 @@ import Cart from '../container/cart-container'
 
 
 const Header = ({setactivebutton, activeTab, cartItem, soldItem}) => {
-console.log(cartItem)
     const ActiveTab = () => {
         if (activeTab === 'PRODUCT') {
             return <Products/>;
@@ -47,8 +46,8 @@ console.log(cartItem)
             <ActiveTab/>
             <footer className="footer">
                 <div className="container">
-                    <span className="badge badge-info">kanif888@live.com</span>
-                    <span className="badge badge-info">+91 9730106333</span>
+                    <span className="badge badge-info">Kanifnath Gaikwad </span>
+                     <a href='https://www.linkedin.com/in/kanifnath-gaikwad-18867845/'>LinkedIn Me</a>
                 </div>
             </footer>
 

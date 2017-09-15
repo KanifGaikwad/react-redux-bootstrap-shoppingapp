@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ProductsList = ({products, addtocart}) => {
+const ProductsList = ({products, addtocart, filterproducts}) => {
 
   const product = (p) => {
       if(p === undefined){
@@ -8,18 +8,18 @@ const ProductsList = ({products, addtocart}) => {
       }
       return (
           <div className="list-group" key={p.id}>
-              <a href="#" className="list-group-item list-group-item-action flex-column align-items-start active">
+              <div className="list-group-item list-group-item-action flex-column align-items-start active">
                   <div className="d-flex w-100 justify-content-between">
                       <h5 className="mb-1">
                           <input className="form-check-input" type="checkbox" checked={p.incart}
-                                 onClick={() => addtocart(p.id, p.name, p.price, p.incart)}>
+                                 onChange={() => addtocart(p.id, p.name, p.price, p.incart)}>
                           </input>{p.name}
                       </h5>
                   </div>
                   <p className="mb-1">{p.desc}</p>
                   <small>{p.price} INR
                   </small>
-              </a>
+              </div>
           </div>
       )
   }
@@ -27,17 +27,19 @@ const ProductsList = ({products, addtocart}) => {
     const prodrows = (products) => {
         var list = [];
         for (let i = 0; i < products.length; i=i+3) {
-            {
-                list.push(
-                    <div className="row">
+            list.push(
+                    <div className="row" key={i}>
                         <div className="col-md-4">{product(products[i])}</div>
                         <div className="col-md-4">{product(products[i + 1])}</div>
                         <div className="col-md-4">{product(products[i + 2])}</div>
                     </div>
                 )
-            }
         }
         return list;
+    }
+
+    const handleChange = (event) => {
+        return filterproducts(event.target.value)
     }
 
     return (
@@ -52,7 +54,7 @@ const ProductsList = ({products, addtocart}) => {
                       <span className="input-group-btn">
                         <button className="btn btn-default" type="button">Go!</button>
                       </span>
-                        <input type="text" className="form-control" placeholder="Search for..."></input>
+                        <input type="text" onChange={handleChange} className="form-control" placeholder="Search for..."></input>
                     </div>
                 </div>
             </div>
