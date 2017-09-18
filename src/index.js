@@ -27,7 +27,7 @@ const generateProducts = (number) => {
 
 const defaultState = {
     staticData: {
-        products: generateProducts(500)
+        products: generateProducts(20)
     }
 }
 
