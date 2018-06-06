@@ -1,6 +1,6 @@
 {
   "name": "reactjs-redux-todos",
-  "description": null,
+  "description": "react js",
   "version": "0.0.33",
   "dependencies": {
     "prop-types": "15.5.10",
